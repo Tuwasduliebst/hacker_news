@@ -27,6 +27,7 @@ const ul = document.createElement("ul");
 
 for (let i = 0; i < 10; i++) {
   const li = document.createElement("li");
+  // <li>${newsFeed[i].title}</li>;
   li.innerHTML = newsFeed[i].title;
   ul.appendChild(li);
 }
