@@ -116,6 +116,7 @@ function newsDetail() {
         </div>
       `);
 
+      //대댓글 : 재귀호출(끝을 알 수 없는 구조에 자주 사용)
       if (comments[i].comments.length > 0) {
         commentString.push(makeComment(comments[i].comments, called + 1));
       }
