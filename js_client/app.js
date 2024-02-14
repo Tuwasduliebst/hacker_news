@@ -22,7 +22,7 @@ function newsFeed() {
 
   for (let i = (store.currentPage - 1) * 10; i < store.currentPage * 10; i++) {
     newsList.push(`
-        <li>
+      <li>
         <a href="#/show/${newsFeed[i].id}">
           ${newsFeed[i].title} (${newsFeed[i].comments_count})
         </a>
@@ -32,10 +32,10 @@ function newsFeed() {
 
   newsList.push("</ul>");
   newsList.push(`
-  <div>
-    <a href="#/page/${store.currentPage - 1}">이전 페이지</a>
-    <a href="#/page/${store.currentPage + 1}">다음 페이지</a>
-  </div>
+    <div>
+      <a href="#/page/${store.currentPage > 1 ? store.currentPage - 1 : 1}">이전 페이지</a>
+      <a href="#/page/${store.currentPage + 1}">다음 페이지</a>
+    </div>
   `);
 
   container.innerHTML = newsList.join("");
