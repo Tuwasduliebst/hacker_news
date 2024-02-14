@@ -14,6 +14,14 @@ function getData(url) {
   return JSON.parse(ajax.response);
 }
 
+function makeFeeds(feeds) {
+  for (let i = 0; i < feeds.length; i++) {
+    feeds[i].read = false;
+  }
+
+  return feeds;
+}
+
 function newsFeed() {
   let newsFeed = store.feeds;
   const newsList = [];
@@ -43,7 +51,7 @@ function newsFeed() {
   `;
 
   if (newsFeed.length === 0) {
-    newsFeed = store.feeds = getData(NEWS_URL);
+    newsFeed = store.feeds = makeFeeds(getData(NEWS_URL));
   }
 
   for (let i = (store.currentPage - 1) * 10; i < store.currentPage * 10; i++) {
