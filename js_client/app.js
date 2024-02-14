@@ -42,14 +42,14 @@ function newsFeed() {
 }
 
 function newsDetail() {
-  const id = location.hash.substring(1);
+  const id = location.hash.substring(7);
   const newsContent = getData(CONTENT_URL.replace("@id", id));
 
   container.innerHTML = `
     <h1>${newsContent.title}</h1>
 
     <div>
-      <a href="#">목록으로</a>
+      <a href="#/page/${store.currentPage}">목록으로</a>
     </div>
   `;
 }
@@ -60,7 +60,7 @@ function router() {
   if (routePath === "") {
     newsFeed();
   } else if (routePath.indexOf("#/page/") >= 0) {
-    store.currentPage = Number(routePath.substr(7));
+    store.currentPage = Number(routePath.substring(7));
     newsFeed();
   } else {
     newsDetail();
