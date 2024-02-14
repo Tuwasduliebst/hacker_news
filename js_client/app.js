@@ -46,7 +46,13 @@ function newsDetail() {
 }
 
 function router() {
-  newsFeed();
+  const routePath = location.hash;
+
+  if (routePath === "") {
+    newsFeed();
+  } else {
+    newsDetail();
+  }
 }
 
 window.addEventListener("hashchange", router);
