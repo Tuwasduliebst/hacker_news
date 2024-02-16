@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "strict": true,
+    "strict": true, //soft landing하게 false해도 working js
     "target": "ES5",
     "module": "CommonJS",
     "alwaysStrict": true,
-    "noImplicitAny": true,
+    "noImplicitAny": true, //어떤 타입이든 다 된다는 의미 any...true(반드시 타입지정해야 함)
     "noImplicitThis": true,
     "sourceMap": true,
     "downlevelIteration": true
