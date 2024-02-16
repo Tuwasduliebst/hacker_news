@@ -86,7 +86,7 @@ function newsFeed() {
 }
 
 function newsDetail() {
-  const id = location.hash.substring(7);
+  const id = location.hash.substr(7);
   const newsContent = getData(CONTENT_URL.replace("@id", id));
   let template = `
     <div class="bg-gray-600 min-h-screen pb-8">
@@ -155,7 +155,7 @@ function router() {
   if (routePath === "") {
     newsFeed();
   } else if (routePath.indexOf("#/page/") >= 0) {
-    store.currentPage = Number(routePath.substring(7));
+    store.currentPage = Number(routePath.substr(7));
     newsFeed();
   } else {
     newsDetail();
